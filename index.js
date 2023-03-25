@@ -8,14 +8,15 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Notes");
+});
 // Miidlewares
 app.use("/users", userRouter);
 app.use(auth);
 app.use("/notes", noteRouter);
 
-app.get("/", (req, res) => {
-  res.send("Notes Page");
-});
+
 
 app.listen(4000, async () => {
   try {
