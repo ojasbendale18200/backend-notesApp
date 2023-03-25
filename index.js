@@ -13,6 +13,10 @@ app.use("/users", userRouter);
 app.use(auth);
 app.use("/notes", noteRouter);
 
+app.get("/", (req, res) => {
+  res.send("Notes Page");
+});
+
 app.listen(4000, async () => {
   try {
     await connection;
